@@ -28,14 +28,5 @@
     "mongoose": "*",
     "passport": "*",
     "passport-local": "*"
-  },
-  "apidoc": {
-    "name": "Ascend Trading API",
-    "version": "0.1.0",
-    "description": "apiDoc for Ascend Trading",
-    "apidoc": {
-      "title": "Ascend Trading API",
-      "url": "https://api.ascendtrading.net"
-    }
   }
 }

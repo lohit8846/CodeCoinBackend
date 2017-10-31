@@ -1,0 +1,41 @@
+{
+  "name": "ascend-node-api",
+  "version": "1.0.0",
+  "description": "This is the Ascend Trading API. It is a JSON API backend for the Ascend Trading application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ascendtradingdevelopment/ascend-node-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ascendtradingdevelopment/ascend-node-api/issues"
+  },
+  "homepage": "https://github.com/ascendtradingdevelopment/ascend-node-api#readme",
+  "dependencies": {
+    "accesscontrol": "^1.5.2",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-mongo": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-local": "*"
+  },
+  "apidoc": {
+    "name": "Ascend Trading API",
+    "version": "0.1.0",
+    "description": "apiDoc for Ascend Trading",
+    "apidoc": {
+      "title": "Ascend Trading API",
+      "url": "https://api.ascendtrading.net"
+    }
+  }
+}

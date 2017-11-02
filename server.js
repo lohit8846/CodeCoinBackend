@@ -24,14 +24,8 @@ mongoose.connect(uristring, { useMongoClient: true }, function (err, res) {
     }
 });
 
-var user = require('./routes/user');
-
 var app = express();
 
-
-// Serving static files from "public" folder
-app.use('/', express.static('public'));
-app.use('/', express.static('apidoc'));
 
 // BodyParser Middleware
 app.use(bodyParser.json());
@@ -47,11 +41,7 @@ app.use(session({
     store: new MongoStore({mongooseConnection : mongoose.connection})
 }));
 
-
-
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
+var passportConfig = require('./config/passport')(app, passport);
 
 
 app.get('/', function(req, res) {
@@ -59,8 +49,9 @@ app.get('/', function(req, res) {
 });
 
 
-
+var user = require('./routes/user');
 app.use('/user', user);
+
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.

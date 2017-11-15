@@ -11,7 +11,7 @@ var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     process.env.MONGODB_URI ||
-    'mongodb://localhost/loginapp';
+    'mongodb://localhost/codecoin';
 
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
@@ -47,7 +47,6 @@ var passportConfig = require('./config/passport')(app, passport);
 app.get('/', function(req, res) {
     return res.send("ok");
 });
-
 
 var user = require('./routes/user');
 app.use('/user', user);

@@ -2,17 +2,9 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var User = require('../models/user');
-var ac = require('./config/access');
+var ac = require('../config/access');
 
-/**
- * @api {post} /signup Create New User
- * @apiGroup Users
- * @apiParam {String} username username of new user
- * @apiParam {String} password password of new user
- * @apiParam {String} firstName first name of new user
- * @apiParam {String} email email of new user
- * @apiSuccess {String} Sign up is successful
- */
+/*
 router.post('/signup',function(req, res) {
 
     var firstName = req.body.firstName;
@@ -40,27 +32,19 @@ router.post('/signup',function(req, res) {
 });
 
 
-/**
- * @api {post} /login logs in the requesting user
- * @apiGroup Users
- * @apiSuccess {String} logged in user successfully
- */
 router.post('/login',
-    passport.authenticate('local'),
+    passport.authenticate('github2'),
     function(req, res) {
         // If this function gets called, authentication was successful.
         // `req.user` contains the authenticated user.
         req.user.password = null;
         res.json(req.user);
     });
+*/
 
-/**
- * @api {post} /logout logs out the requesting user
- * @apiGroup Users
- * @apiSuccess {String} user is logged out
- */
+
 router.get('/logout', ac.ensureAccess(), function(req, res) {
-    username = req.user.username;
+    username = req.user.login;
     req.logout();
     res.send(username + " is logged out");
 

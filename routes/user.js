@@ -42,11 +42,15 @@ router.post('/login',
     });
 */
 
+router.get('/getUser', ac.ensureAccess(), function(req, res) {
+    return res.json(req.user);
+});
+
 
 router.get('/logout', ac.ensureAccess(), function(req, res) {
     username = req.user.login;
     req.logout();
-    res.send(username + " is logged out");
+    return res.send(username + " is logged out");
 
 });
 
